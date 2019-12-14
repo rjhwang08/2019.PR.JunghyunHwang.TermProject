@@ -171,3 +171,4 @@ y_pred = model.predict(predictMatrix)
 ## References
 - [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
 - [BoW, SPM](https://github.com/CyrusChiu/Image-recognition)
+- [Histogram Intersection](https://github.com/wihoho/Image-Recognition/blob/5dc8834dd204e36172815345f0abe5640a4a37ef/recognition/classification.py#L10)
