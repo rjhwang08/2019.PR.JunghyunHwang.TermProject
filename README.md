@@ -154,3 +154,20 @@ print(grid.best_params_)
 model = grid.best_estimator_
 y_pred = model.predict(predictMatrix)
 ```
+
+***
+## Result
+| Level | codebooksize | imagesize | spm | spm_kernel | scaler | accuracy |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | 16 | default | X | X | X | 0.15602 |
+| 0 | 200 | default | X | X | X | 0.41430 |
+| 0 | 400 | default | X | X | X | 0.43617 |
+| 2 | 200 | 256*256 | O | X | X | 0.49231 |
+| 2 | 200 | 256*256 | O | O | X | 0.52718 |
+| 2 | 800 | 256*256 | O | O | X | 0.57387 |
+| 2 | 800 | 256*256 | O | O | O | 0.60756 |
+
+***
+## References
+- [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
+- [BoW, SPM](https://github.com/CyrusChiu/Image-recognition)
