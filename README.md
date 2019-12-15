@@ -124,7 +124,8 @@ def histogramIntersection(M, N):
 
 ### Process train & test data using each descriptors
 ```
-X = [spatial_pyramid_matching(train_images[i], des_list[i], codeBook, level=2) for i in range(len(train_images))]
+X = [spatial_pyramid_matching(train_images[i], des_list[i], codeBook, level=2) 
+                                    for i in range(len(train_images))]
 
 scaler = StandardScaler()
 X = np.array(X)
@@ -135,7 +136,8 @@ X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.1, rando
 gramMatrix = histogramIntersection(X_train, X_train)
 ```
 ```
-X_test = [spatial_pyramid_matching(test_images[i], des_list_test[i], codeBook, level=2) for i in range(len(test_images))]
+X_test = [spatial_pyramid_matching(test_images[i], des_list_test[i], codeBook, level=2) 
+                                    for i in range(len(test_images))]
 
 X_test = np.array(X_test)
 X_test = scaler.fit_transform(X_test)
