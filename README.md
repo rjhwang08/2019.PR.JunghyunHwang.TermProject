@@ -167,6 +167,18 @@ y_pred = model.predict(predictMatrix)
 | 2 | 800 | 256*256 | O | O | X | 0.57387 |
 | 2 | 800 | 256*256 | O | O | O | 0.60756 |
 
+위의 성능 개선 과정 부분에서 제가 사용한 모든 방법을 kaggle discussion에 쉽게 메뉴얼로 제작하여 업로드하였습니다.
+
+[Base-line 40% 대에서 60%까지 올리는 완벽 가이드](https://www.kaggle.com/c/2019-ml-finalproject/discussion/121634)
+***
+## Comment
+단순 BoW 만을 이용한 level 0 까지는 논문에 reporting된 성능과 동일한 값을 내는데 성공하였으나, 이후로 SPM을 적용하는 부분에서 예상과는 달리 큰 어려움이 있었고, 결국 k=200 기준 동일 성능을 내는데 한참 못미치는 결과를 얻게 되었습니다.
+
+논문을 나름 읽는다고 읽었지만 원인을 추론하기는 힘들었습니다. 저자와는 달리 제 모델은 codebooksize 값인 k값에 따라 많은 성능 향상 폭을 보였으며, 그럼에도 기준 성능인 0.64에는 이르지 못하였습니다. 예상하는 바로는, 논문에서 사용된 다양한 parameter(SVM:C,gamma/step_size/pyramid 가중치 등)에서 차이가 있지 않았을까 합니다. 
+
+추가로 수업시간에 배운 LDA를 사용하고자 하였으나, 잘못 적용된 탓에 오히려 낮은 성능을 보여 배제하였습니다. 또한 SIFT step_size를 4로 조정하여 시도하였으나 과도한 RAM 사용으로 Runtime이 계속 다운되어 step_size는 8로 고정하였습니다.
+
+읽어주셔서 감사합니다.
 ***
 ## References
 - [Beyond bags of features spatial pyramid matching for recognizing natural scene categories, CVPR 2006](https://inc.ucsd.edu/~marni/Igert/Lazebnik_06.pdf)
